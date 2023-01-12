@@ -107,6 +107,7 @@ app.get("/todos/:id", async (req, res) => {
 app.post("/todos", async (req, res) => {
   const todo = req.body;
   const result = await Todos.create(todo);
+  
   res.status(201).json(result);
 });
 
@@ -121,7 +122,7 @@ app.put("/todos/:id", async (req, res) => {
 
 app.delete("/todos/:id", async (req, res) => {
   const { id } = req.params;
-  const todo = await Todos.destroy({ where: id });
+  const todo = await Todos.destroy({ where: { id } });
   res.status(204).json(todo);
 });
 
