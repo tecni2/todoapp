@@ -14,19 +14,11 @@ const TodosCategories = db.define("todos_categories", {
     type: DataTypes.INTEGER,
     allowNull: false,
     field: "category_id",
-    references: {
-      model: Categories,
-      key: "id",
-    }
   },
   todoId: {
     type: DataTypes.INTEGER,
     allowNull: false,
     field: "todo_id",
-    references: {
-      model: Todos,
-      key: "id",
-    },
   },
 }, {
   timestamps: false,
